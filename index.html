@@ -1,24 +1,4 @@
  <!DOCTYPE html>
-<html lang="en">
-	<title>Journal</title>
-
-	  </style>
-   </head>
-   <body>
-      <div class="content">
-         <hr>
-         <div class="center">
-            <p>  <h1>Grounsky's journal</h1>
-<article>
-  <h2>2022-07-05</h2>
-  <p>My entry</p>
-</article>
-
-<article>
-  <h2>2022-06-11</h2>
-  <p>My second entry!</p>
-</article>
-            </p>
 
 		 body {
   /*Just to make the main pages look a little nicer.*/
@@ -180,3 +160,514 @@ a {
     margin: 0 auto;
     }
   }
+
+		 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EGGRAMEN - HTML CYOA</title>
+    <!-- alter this later -->
+    <!--<link href="/style.css" rel="stylesheet" type="text/css" media="all">-->
+    <link href="https://eggramen.neocities.org/creations/games/html_cyoa/cyoa.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+  <div class=main-container>
+  <div class=story-container>
+  
+  <div class=page id=start>
+  <div class=page-number>1</div>
+  <div class=page-content>
+    <h3>Welcome to my Short Interactive Fiction!</h3>
+
+    <p>This is a demonstration of a system for making Choose Your Own Adventure (CYOA) works that can be played in browser on a single page, using only basic HTML and CSS (and no frames, unless you really want to.)</p>
+    <p>To learn more about making a CYOA in HTML/CSS, check out this <a href="#tutorial-start">tutorial</a>!</p>
+    <p>Or, if you just want to play the game, <a href="#example-start">click here to start</a>.</p><!--
+    <p><br><br></p>
+    <p style="font-size:0.95em;">(<i>P.S.</i><br><br>(If you're navigating this page by keyboard, and you need quick access to the 'restart game' or 'back' buttons, just add "#footer" to the URL to jump down there!)</p>-->
+  </div>
+  </div>
+  
+  <div class=page id=tutorial-start>
+  <div class=page-number>2</div>
+  <div class=page-content><h3>?!?</h3>
+    <p>Wait a minute! <i>How did we get here?,</i> you might be thinking, as you find yourself on a sudden new page. Huh! That's weird! (Okay, you are probably not thinking that, but let's pretend for a moment.)</p>
+    <p>The link didn't take you to a new page: it took you to a new part of the page, previously hidden by some carefully designed &lt;div&gt;s.</p>
+    <p>Now, you're on a new "page" of the CYOA narrative being written. (Well, it's not much of a narrative at this point, but you get the idea, I hope.)</p>
+    <p><a href=#3>Go to page 3</a> for a better explanation, or <a href=#4>jump ahead to page 4</a> to skip to the code.</p>
+  </div>
+  </div>
+  
+  <div class=page id=3>
+  <div class=page-number>3</div>
+  <div class=page-content><h3>How It Works</h3>
+    <p>This story is made up of a bunch of individual divs, with the "id" attribute used to let hyperlinks jump to specific sections.</p>
+    <p>You can actually see these ids in the address bar of your browser. Right now, for example, you should see the URL ends in '#3', because '3' is the id of this particular section.</p>
+    <p>By putting each 'page' of the story in a div of fixed size, and putting all the pages in a div that only shows one fixed-size section at a time, we can create the illusion of changing the content on the page, and traverse the pages via hyperlinks.</p>
+    <p>(You can achieve a similar effect by putting a metric crapton of &lt;br&gt; tags between page sections and putting all that in a fixed-size box that hides overflow, but this system looks a little more elegant.)</p>
+    <p>If you'd like to know more about the code, <a href="#4">continue to page 4</a>. Otherwise, check out the example, "The Tunnel and the Tomb", starting on <a href="#example-start">page 6</a>. (Minor heads-up for, uh, near-drowning and a fair number of bad endings.)</p>
+  </div>
+  </div>
+  
+  <div class=page id=4>
+  <div class=page-number>4</div>
+  <div class=page-content><h3>The Code</h3>
+    <p>The code used to build this page is very simple. (Well, this page also uses a teeny tiny bit of my site skin for this sections' font and the page's overall background, but otherwise it's all just one tiny file.)</p>
+    <p>The class <tt>story-container</tt> is used to create the 'window' that the whole story is viewed through -- you'll see it as the black-outlined box this text appears in. It uses <tt>overflow: hidden</tt> to conceal any pages other than the one currently scrolled to.</p>
+    <p>The class <tt>page</tt> contains the contents of the page itself. It has the exact same height and width as <tt>story-container</tt>, to ensure that the whole page and only the current page is visible inside the box. It also uses <tt>overflow: auto</tt> to allow the individual page to scroll if there's too much text to fit inside the story box. (This ideally should not happen, though.)</p>
+    <p>The class <tt>page-number</tt> is pretty self-explanatory. It uses <tt>position: absolute</tt> to appear in a consistent position at the top of the page (<tt>page</tt> uses <tt>position: relative</tt> to keep it inside the page boundaries.)</p>
+    <p>The class <tt>page-content</tt> contains the body text of the page itself, such as the paragraph you're reading right now.</p>
+    <p>You can check out some more code on <a href=#5>page 5</a>, or hop over to the example minigame on <a href=#example-start>page 6</a>.</p>
+  </div>
+  </div>
+  
+  <div class=page id=5>
+  <div class=page-number>5</div>
+  <div class=page-content><h3>Example In Action</h3>
+  <p>Take a look at the <a href="view-source:https://eggramen.neocities.org/games/html_cyoa/cyoatest.html">source code</a> of this page and see what it looks like!</p>
+  <p>You can also see the <a href="cyoa.css">CSS stylesheet</a> here, which has both the basic style template, and a variation used for an <a href=#example-start>example game which you can play here</a>! (Note: it does have several death game overs.)</p>
+  </div>
+  </div>
+  
+    <div class="page ancient" id=example-start>
+  <div class=page-number><a href="#example-start"><!-- Hidden link as landmark for easier keyboard navigation. --></a>1</div>
+  <div class=page-content><h3>The Tunnel And The Tomb</h3>
+  <span class=byline>A short game by <a href="https://eggramen.neocities.org">EGGRAMEN</a>. Full text and code released under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license.</span>
+  <hr>
+  <p>You're an adventurer in search of treasure, deep in the bowels of the forgotten alien temple of GYTHRFTHSTZ. The expedition has been long and grueling, but at long last, you've reached a tiny gilded antechamber, seemingly undisturbed. </p>
+  <p>On an altar at its center lies a silvery statue of an alien figure, barely the height of your little finger.</p>
+  <div class=stick-to-bottom><p>Do you <a href="#take-1">attempt to take it</a>?</p><p>Or do you <a href="#investigate-1">investigate</a> first?</p> <a href=#></a><p><i>Note: keyboard users and screenreaders beware! Much like thumbing through a CYOA book, tab-navigating beyond the limits of a page may lead to unwanted spoilers! You Have Been Warned!</i></p>
+ </div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-1>
+  <div class=page-number><a href=#take-1></a>2</div>
+  <div class=page-content>
+  <p>You step forward, relishing the sweet flavor of success. You've spent countless hours navigating these deadly halls, and now, at last, its treasures are yours to discover.</p>
+  <p>As you step near to the altar, through, a floor tile clicks underfoot, and a steely rattle sounds from above. A trap! </p>
+  <p>But what kind? There's no time to check. You'll have to trust your reflexes and your gut to keep you alive.</p>
+  <div class=stick-to-bottom><p>Do you <a href="#take-backstep">take a quick step back</a>?</p><p><a href="#take-forward">Leap forward toward the altar</a>?</p><p>Or <a href="#take-duck">stay in place, and duck for cover</a>?</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-backstep>
+  <div class=page-number><a href=#take-backstep></a>3</div>
+  <div class=page-content>
+  <p>You jump back, just in time for an iron cage to drop down around the altar, right where you were standing. You're alive (for now), but the statue may be out of your reach.</p>
+  <p>With cautious tread, you return towards the cage. A long iron chain leads up into the shadowed cathedral-like ceiling, connected to some unknown source in the darkness above you. The cage itself is large enough you don't think anything else could fit up there, at least, so hopefully that's the last thing to fall on your head today.</p>
+  <p>The cage itself is of small enough radius and wide enough spacing that you could, perhaps, just about reach inside and pull the statue back through the bars. Alternately, you could find some other means to extract the statue, without risking quite so much life or limb.</p>
+  <div class=stick-to-bottom><p>Do you <a href=#take-arm>stick your arm between the bars to reach the statue inside</a>?</p><p>Or will you <a href=#take-alt>find another way to retrieve it</a>?</div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-arm>
+  <div class=page-number><a href=#take-arm></a>4</div>
+  <div class=page-content>
+  <p>With some grunting and manouvering, you manage to stick your arm between the bars.</p>
+  <p>Your fingers brush the statue's surface, and you lean forward, trying to get a grip. However, your fumbling efforts only knock the statue on its side, where it rattles and rolls off the central niche of the altar. Something clicks.</p>
+  <p>A terrible sound, that click. You've learned too well by now what it means. A second later, you hear the grave stone <i>thud</i> of the single door behind you falling shut, and something cold begins to drip onto your head.</p>
+  <p>As you look up, a deluge of ice-cold water pours from the central ceiling where the cage had fallen from. You splutter and cough amid the spray.</p>
+  <p>Freeing yourself from the bars will take more time than you can afford. As you struggle, your vision darkens, and soon all you can see is bubbles, obscuring the shadows of that deadly, vaulted ceiling above.</p>
+  <center><h3>YOU HAVE DIED.</h3></center>
+  <div class=stick-to-bottom>
+  <p>(Would you like to <a href="#example-start">try again</a>?)</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-alt>
+  <div class=page-number><a href=#take-alt></a>5</div>
+  <div class=page-content>
+  <p>No worries! This looks like a job for your second favorite trick: creative use of your trusty ADVENTURER'S WHIP. (Your first favorite trick is breaking and entering.)</p>
+  <p>Sticking the handle through the bars, you flick the whip, and after a few tries, manage to knock the statue off the altar, where it rolls along the floor to edge of the cage. Easy as pie.</p>
+  <p>Or so you think, until you hear another terrible <i>click</i>.</p>
+  <p>Your body moves before you think. You...</p>
+  <div class=stick-to-bottom><p>... <a href=#take-exit>scramble back out of the room</a>.</p>
+  <p>... <a href=#take-grab>lunge to the side and grab the statue</a>.</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-exit>
+  <div class=page-number><a href=#take-exit></a>6</div>
+  <div class=page-content>
+  <p>With lightning-quick reflexes, you scurry backward through the door like a panicked crab, just in time for a stone slab to drop in front of you and seal the exit shut.</p>
+  <p>Behind it, you hear the telltale rush of water as the room begins to flood.</p>
+  <p>On one hand, you're not stuck in there with the water.</p>
+  <p>On the other, now you're stuck outside, without the statue.</p>
+  <div class=stick-to-bottom>
+  <center><h3>YOU'VE ESCAPED... BUT AT WHAT COST?</h3></center>
+  <p>(Or would you like to <a href="#example-start">try again</a>?)</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-grab>
+  <div class=page-number><a href=#take-grab></a>7</div>
+  <div class=page-content>
+  <p>With lightning-quick reflexes, you lunge to the side, snatching the statue from the floor as you go. </p> 
+  <p>Behind you, a stone slab slams down over the exit with an ominous <i>thud</i>. Not a moment later, a gush of water falls from the central shaft of the ceiling, splattering you with icy spray.</p>
+  <p>The trap is obvious, and very nasty: the room will fill with water, and you'll drown.</p>
+  <p>Luckily, you're not incapacitated, so you might still have a chance to turn things around.</p>
+  <div class=stick-to-bottom>
+  <p>Perhaps you could <a href="#take-swim">wait for the room to flood, and try floating up through the top to escape</a>?</p>
+  <p>Or maybe you could <a href="#take-climb">climb the chain of the cage, and try shutting off the source of the water</a>.</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-swim>
+  <div class=page-number><a href=#take-swim></a>8</div>
+  <div class=page-content>
+  <p>Right. If you wait for the room to fill up, you can tread water use the chain to pull yourself up to that hole in the ceiling. And if you're right (and goodness, you hope you are), if there's a way for the water to get <i>in</i>, then wherever the water comes from must also be a way <i>out</i>.</p>
+  <p>In practice, it actually takes a few minutes for the room to fill high enough that you can't stand on the ground anymore, and by then you're thoroughly chilled. If you don't drown, hypothermia might do you in anyway -- not exactly how you planned that to go.</p>
+  <p>Soon enough, though, you're floating, and the water carries you bobbing up toward the ceiling as you push against the current, shoving yourself toward the center. It's dark, and still freezing, but the stream of water through the shaft is narrow enough you've got room to breathe. You grip as tightly as you can to the chain, shimmying up it like a vine, but it's getting difficult to see.</p>
+  <div class=stick-to-bottom><p>You can only <a href="#take-swim-2">continue</a>.</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-climb>
+  <div class=page-number><a href=#take-climb></a>9</div>
+  <div class=page-content>
+  <p>You grip the chain with all your might, and start shimmying up against the deluge.</p>
+  <p>It nearly threatens to freeze you as much as drown you, but there's just enough gap to breathe, and you make slow, struggling progress up the shaft.</p>
+  <p>Near the top, you encounter an issue: you don't see a mechanism you can operate. Your headlight, waterproof little soldier it is, illuminates only a grate above, and a metal plate slid recessed into the wall. You try and grab at it to pull it back out, maybe to cover the gap again, but it won't budge.</p>
+  <p>Below you, the room continues to flood ever higher. It's probably up to neck-level, by now.</p>
+  <p>Well, <i>rats</i>.</p>
+  <div class=stick-to-bottom><p>Should you <a href="#take-swim-3">try escaping up the top shaft, after all</a>?</p>
+  <p>Or shimmy back down <a href="#investigate-swim-3">look for another way out</a>?</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-swim-2>
+  <div class=page-number><a href=#take-swim-2></a>10</div>
+  <div class=page-content>
+  <p>As you reach the top, your hands make contact with a rusted iron grate. You expect the worst for several seconds, fumbling around for a latch, before you realize it's already open -- the chain's gotten wedged in the gap, and only the rust has stopped it from swinging the rest of the way.</p>
+  <p>All it takes is a solid tug, and it swings free, giving you a gap just wide enough to shimmy through.</p>
+  <p>You're running out of air, though, and with one last inhale you hold your breath as the rooms finally fills.</p>
+  <p>As it fills, though, so does it reach some sort of equilibrium -- there's pressure, sure, but it's not whacking you in the face anymore. The chain makes a good reinforcer, too, and without too much issue, you shove yourself through that tiny trapdoor hole, and into the raging current above.</p>
+  <div class=stick-to-bottom><p>It's all you can do, then, to <a href="#investigate-grate-2">hold your breath, and keep swimming</a>.</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-swim-3>
+  <div class=page-number><a href=#take-swim-3></a>11</div>
+  <div class=page-content>
+  <p>Your hands make contact with the rusted iron grate, and for several seconds you expect the worst, fumbling around for a latch, before you realize it's already open -- the chain's gotten wedged in the gap, and only the rust has stopped it from swinging the rest of the way.</p>
+  <p>All it takes is a solid tug, and it swings free, giving you a gap just wide enough to shimmy through.</p>
+  <p>You're running out of air, though, and with one last inhale you hold your breath as the rooms finally fills.</p>
+  <p>As it fills, though, so does it reach some sort of equilibrium -- there's pressure, sure, but it's not whacking you in the face anymore. The chain makes a good reinforcer, too, and without too much issue, you shove yourself through that tiny trapdoor hole, and into the raging current above.</p>
+  <div class=stick-to-bottom><p>It's all you can do, then, to <a href="#investigate-grate-2">hold your breath, and keep swimming</a>.</p></div>
+  </div>
+  </div>
+  
+  
+  <div class="page ancient" id=take-forward>
+  <div class=page-number><a href=#take-forward></a>12</div>
+  <div class=page-content>
+  <p>You leap forward, landing on the altar, just in time for an iron cage to drop down around you with an ear-rattling <i>thud</i>.</p>
+  <p>Well. The good news is, you've got easy access to the statue! The bad news is, you're not sure how you're going to get out.</p>
+  <div class=stick-to-bottom><p>Do you <a href=#take-cage>focus your attention on the cage</a>?</p><p>Or do you <a href=#take-statue>take the statue, first</a>?</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=thirteen>
+  <div class=page-number><a href=#thirteen></a>13</div>
+  <div class=page-content>
+  <p>Thumbing through your adventure novel, you flip a page too far and find yourself on the dreaded <b>PAGE THIRTEEN</b>.</p>
+  <p>Page thirteen does not exist. It never has, and never will.</p>
+  <big><b>FOOL,</b></big> says a hollow, terrible voice.
+  <div class=stick-to-bottom>
+  <p>You are <a href="#example-start">forced back to the beginning instantly</a>.</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-cage>
+  <div class=page-number><a href=#take-cage></a>14</div>
+  <div class=page-content>
+  <p>The cage bars are sturdy and unyielding, and the bars are too close together to admit anything wider than your arm.</p>
+  <p>You're not getting out without moving the cage itself, which you find is far too heavy to overturn.</p>
+  <div class=stick-to-bottom><p>You could still <a href=#take-statue>take the statue</a>, but it seems a bit of a moot point.</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=take-statue>
+  <div class=page-number><a href=#take-statue></a>15</div>
+  <div class=page-content>
+  <p>Might as well.</p>
+  <p>You pick up the statue, and something clicks the moment it's lifted. Behind you, a stone slab slams shut over the exit, and a moment later, it begins to rain.</p>
+  <p>You look up, just in time to catch the deluge from above, straight to your face. The weight of the water shoves you down off the altar, onto the floor, where you gurgle and thrash, fighting to stand amid the rapid-rising flood.</p>
+  <p>Iron bars bruise your sides as the water fills your lungs, and you realize there's no escape.</p>
+  <div class=stick-to-bottom>
+  <center><h3>YOU HAVE DIED.</h3></center>
+  <p>(Would you like to <a href="#example-start">try again</a>?)</p></div>
+  </div>
+  </div>
+  
+    <div class="page ancient" id=take-duck>
+  <div class=page-number><a href=#take-duck></a>16</div>
+  <div class=page-content>
+  <p>You freeze in place, and duck.</p>
+  <p>This proves to be a horrible, horrible mistake.</p>
+  <p>Something large, heavy, and probably solid metal bashes into the back of your downturned head like a lead pipe, and your face meets the floor with a stomach-flipping <i>crunch</i>. This is, in all likelihood, the last thing you ever hear.</p>
+  <div class=stick-to-bottom><center><h3>YOU ARE DEAD. </h3><p>(Now that was quick!)</p></center>
+  <p>(Would you like to <a href="#example-start">try again</a>?)</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-1>
+  <div class=page-number><a href=#investigate-1></a>17</div>
+  <div class=page-content>
+  <p>You decide to investigate the room a bit, first. You're an experienced treasure-hunter, and caution, not time, is of the essence.</p>
+  <p>Scrutinizing the floor and walls, you find what might be a hidden switch in the tiles around the altar. You'd better take care not to step on them, then.</p>
+  <p>There also looks to be something in the niche under the statue itself, but the base of the statue makes it difficult to see what. It could just be a natural part of the altar, or it could be a deadly trap. Like most booby-traps, there's no way to be sure.</p>
+  <div class=stick-to-bottom><p>Would it make more sense to <a href="#investigate-take">step over the tiles?</a></p><p>Or <a href="#investigate-whip">to try grabbing the statue from afar</a>?</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-take>
+  <div class=page-number><a href=#investigate-take></a>18</div>
+  <div class=page-content>
+  <p>Carefully stepping over the tiles around the altar, you lean onto the altar itself, up close and personal with the statue.</p>
+  <p>At this distance, you can see a depressed bit of stone under the statue, cut separate from the surface. Looks like another trap.</p>
+  <div class=stick-to-bottom><p>Do you <a href=#investigate-take-2>take the statue anyway</a>?</p>
+  <p>Or maybe <a href=#investigate-indyswap>look for a way to keep the switch pressed</a>?</p></div>
+  </div>
+  </div>
+  
+    <div class="page ancient" id=investigate-take-2>
+  <div class=page-number><a href=#investigate-take-2></a>19</div>
+  <div class=page-content>
+  <p>Throwing caution to the wind, you grab the statue, and instantly, something clicks.</p>
+  <p>More specifically, the niche under the statue clicks, and a faint <i>clunk</i> above you is your only warning before a rush of ice-cold water comes crashing down on your head, like the world's worst bucket-over-the-door prank.</p>
+  <p>It nearly knocks you to the ground, and as you splutter through the soaking stream, you see (and feel) a stone slab come slamming down in front of the only exit.</p>
+  <p>Well. Crap.</p>
+  <div class=stick-to-bottom><p>Do you <a href=#investigate-flood>look for another exit</a>?</p>
+  <p>Or maybe <a href=#investigate-swim>get ready to swim</a>?</p></div>
+  </div>
+  </div>
+  
+    <div class="page ancient" id=investigate-indyswap>
+  <div class=page-number><a href=#investigate-indyswap></a>20</div>
+  <div class=page-content>
+  <p>You've got this.</p>
+  <p>Fishing around in your pockets, you find a few things that could cover the niche (not counting your trusty whip, which you don't plan on parting with any time soon.)</p>
+  <p>Do you try...</p>
+  <div class=stick-to-bottom><p>... a <a href=#indyswap-carabiner>carabiner</a>?</p>
+  <p>... your <a href=#indyswap-flashlight>flashlight</a>?</p>
+  <p>... or a <a href=#indyswap-lead>a piece of lead</a>? (Why do you even <i>have</i> that?)</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=indyswap-carabiner>
+  <div class=page-number><a href=#indyswap-carabiner></a>21</div>
+  <div class=page-content>
+  <p>With impeccable precision and care, you set the carabiner onto the niche at the exact second you yank the statue off of it, and pray the carabiner's weight will be enough to hold.</p>
+  <p>The statue is heavier than you estimated, though, and you realize you only have a split second to move before whatever trap it triggers is released.</p>
+  <div class=stick-to-bottom><p>Do you <a href=#indyswap-exit>make a run for the exit</a>?</p><p><a href="#investigate-backstep">Take a quick step back</a>?</p><p>Or do you <a href=#investigate-duck>duck for cover</a>?</p></div>
+  </div>
+  </div>
+  
+    <div class="page ancient" id=indyswap-exit>
+  <div class=page-number><a href=#indyswap-exit></a>22</div>
+  <div class=page-content>
+  <p>You bolt for the exit, but too late -- a stone slab nearly skins your nose off as it drops down in front of you, boxing you in.</p>
+  <p>A second later, a deluge of icy water comes pouring down from the center of the room, flooding the floor in an instant. You can't see the source, but you have no doubt it's meant to fill up the whole room, with you in it.</p>
+  <p>Luckily, you're not incapacitated, and your wits are still about you.</p>
+  <div class=stick-to-bottom><p>Perhaps you could <a href="#investigate-swim">wait for the room to flood, and try floating up through the top to escape</a>?</p>
+  <p>Or maybe you could <a href=#investigate-flood>poke around for alternative exits</a>?</div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=indyswap-flashlight>
+  <div class=page-number><a href=#indyswap-flashlight></a>23</div>
+  <div class=page-content>
+  <p>Luckily, you've got a headlamp, so your flashlight was only ever for backup.</p>
+  <p>With impeccable precision and care, you slide the flashlight onto the niche exactly as you whisk the statue off of it, leaving the weight of the flashlight to hold down the switch. You hold your breath.</p>
+  <p>Nothing changes</p>
+  <p>You lift the statue in the air, and take a cautious step back, avoiding the trapped tiles, until you're at the exit, and you duck out of the room with statue in hand.</p>
+  <div class=stick-to-bottom><p><p>You've got it. Now all that's left to do is <a href=#end-1>get back out the way you came</a>.</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=indyswap-lead>
+  <div class=page-number><a href=#indyswap-lead></a>24</div>
+  <div class=page-content>
+  <p>With as much care as you can muster, you place the hunk of lead onto the niche at exact moment you pull the statue away.</p>
+  <p>The difference in weight is palpable, though -- you've clearly overestimated the statue's heft. Maybe that won't matter, though, so long as the switch stays pressed?</p>
+  <p>You take a cautious step toward the door, ready to bolt or crouch at a moment's notice.</p>
+  <div class=stick-to-bottom><p>Do you <a href=#indyswap-exit>make a run for the exit</a>?</p><p><a href="#investigate-backstep">Take a quick step back</a>?</p><p>Or do you <a href=#investigate-duck>duck for cover</a>?</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-whip>
+  <div class=page-number><a href=#investigate-whip></a>25</div>
+  <div class=page-content>
+  <p>With your trusty ADVENTURER'S WHIP, you snap out and snag the statue, yanking it back toward your hand. It sails through the air, and you catch it with ease, only to hear a faint <i>click</i> from the altar. </p><p>You've triggered another trap, it seems, and now your survival is up to reflex once again.</p>
+  <div class=stick-to-bottom><p>Do you <a href=#investigate-exit>make a run for the exit</a>?</p><p><a href="#investigate-backstep">Take a quick step back</a>?</p><p>Or do you <a href=#investigate-duck>duck for cover</a>?</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-exit>
+  <div class=page-number><a href=#investigate-exit></a>26</div>
+  <div class=page-content>
+  <p>With lightning-quick reflexes, you bolt for the door.</p>
+  <p>In a dash and skid across the floor that would make a major league baseball batter jealous, you slip out through the antechamber's sole exit just as a great stone slab comes slamming down onto the threshold, narrowly missing your basically everything.</p>
+  <p>The impact of untold tons of stone rattles your bones and shakes you to your core, but as you catch your breath, you realize you are, in fact, outside the room. So clearly you've done something right.</p>
+  <p>You stand, brushing archeological debris from your probably skinned knees, and weigh the silvery statue in your hand. It's the genuine article, alright.</p>
+  <div class=stick-to-bottom><p>You've got it. Now all that's left to do is <a href=#end-1>get back out the way you came</a>.</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-backstep>
+  <div class=page-number><a href=#investigate-backstep></a>27</div>
+  <div class=page-content>
+  <p>With lightning-quick reflexes, you take a step back into the doorway, out of range of any surprise traps. Or so you assume, until something scrapes above you...</p>
+  <p>... and about ten tons of solid stone slab come down on your head.</p>
+  <p>Your only consolation (though you lack to cognizance to appreciate it) is that your death is <i>very</i> quick.</p>
+  <div class=stick-to-bottom><center><h3>YOU HAVE DIED. </h3></center>
+  <p>(Would you like to <a href="#example-start">try again</a>?)</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-duck>
+  <div class=page-number><a href=#investigate-duck></a>28</div>
+  <div class=page-content>
+  <p>You freeze in place and duck low to the ground, in case anything tries coming out of the walls to take a swing at your head. (Arrow-traps, man.)</p>
+  <p>Nothing of the sort happens, but something huge and heavy slams into the ground behind you. When you uncurl enough to look around, you find the exit now blocked by solid stone.</p>
+  <p>And then, because your day needed to get worse, a gush of ice-cold water comes down from the vaulted ceiling, filling the center of the room. You have a nasty suspicion it's going to flood the place, with you still in it.</p>
+  <p>Time to consider your options.</p>
+  <div class=stick-to-bottom><p>Perhaps you could <a href="#investigate-swim">wait for the room to flood, and try floating up through the top to escape</a>?</p>
+  <p>Or maybe you could <a href=#investigate-flood>poke around for alternative exits</a>?</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-flood>
+  <div class=page-number><a href=#investigate-flood></a>29</div>
+  <div class=page-content>
+  <p>You circle the room, searching for exits, but find none. The walls are seamless; no secret passages unveil themselves. The water reaches your knees, and then your waist, and soon you can barely do anything but stand on your tiptoes and try to keep your head above the surface.</p>
+  <div class=stick-to-bottom><p>Looks like you'll have to <a href="#investigate-flood-2">swim</a>.</p>
+  <p>Or, you suppose you could <a href="#investigate-swim-3">keep looking</a>?</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-flood-2>
+  <div class=page-number><a href=#investigate-flood-2></a>30</div>
+  <div class=page-content>
+  <p>You begin to tread water. The central shaft might have an exit -- the water must come from <i>somewhere</i> -- but there's no guarantee it'll be one you can traverse.</p>
+  <div class=stick-to-bottom><p>You could try <a href="#investigate-flood-3">swimming up the central shaft</a>. </p>
+  <p>Or you could <a href="#investigate-swim-3">keep looking for exits</a>.</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-flood-3>
+  <div class=page-number><a href=#investigate-flood-3></a>31</div>
+  <div class=page-content>
+  <p>With limited options, you begin to swim toward the center of the room. The current fights you, but you fight back with your weakening, chilled, but utterly desperate strength. Ah, adrenaline.</p>
+  <p>Soon, you manage to position yourself under the waterfall, using the water level and the stone edges of the shaft to keep yourself bobbing in place. There's room enough to breathe, but it's a narrow fit, and your vision grows dim as you rise.</p> 
+  <div class=stick-to-bottom><p>You can only <a href="#investigate-swim-2">continue</a>.</p></div>
+  </div>
+  </div>
+  
+  
+  <div class="page ancient" id=investigate-swim>
+  <div class=page-number><a href=#investigate-swim></a>32</div>
+  <div class=page-content>
+  <p>Right. If you wait for the room to fill up, you can tread water and rise up to that hole in the ceiling. If you're right (and goodness, you hope you are), if there's a way for the water to get <i>in</i>, then wherever the water comes from must also be a way <i>out</i>.</p>
+  <p>It actually takes a few minutes for the room to fill high enough that you can't stand on the ground anymore, and by then you're thoroughly chilled. If you don't drown, hypothermia might do you in anyway -- not exactly how you planned that to go.</p>
+  <p>Soon enough, though, you're floating, and the water carries you bobbing up toward the ceiling as you push against the current, shoving yourself toward the center. It's dark, and still freezing, but the stream of water through the shaft is narrow enough you've got room to breathe. Your hands find some paltry friction on the slick stone walls, and you try to pull yourself up. It's getting difficult to see.</p>
+  <div class=stick-to-bottom><p>You can only <a href="#investigate-swim-2">continue</a>.</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-swim-2>
+  <div class=page-number><a href=#investigate-swim-2></a>33</div>
+  <div class=page-content>
+  <p>Reaching above your head, the flow of water pushes back, until you find purchase on something solid and metal.</p>
+  <p>The good news: you've reached the top of the shaft.</p>
+  <p>The bad news: there's no open exit for you. The water flows in through a grating, holes so small they'll hardly admit your fist, let alone the rest of you, even if the water wasn't shoving you down like a grade-school bully over the toilet. (Now that you think about it, you're not sure where this water comes from-- ugh, let's not think of that.)</p>
+  <p>It's a dire choice, and you must choose quickly.</p>
+  <div class=stick-to-bottom><p>Do you <a href="#investigate-grate">try to dismantle the grate</a>?</p>
+  <p>Or do you <a href="#investigate-swim-3">try to find another path</a>?</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-grate>
+  <div class=page-number><a href=#investigate-grate></a>34</div>
+  <div class=page-content>
+  <p>Dismantle isn't the right word, exactly.</p>
+  <p>Dismantle, you see, would imply taking the grate apart with in an orderly fashion, perhaps with a screwdriver or something.</p>
+  <p>This grate is several hundred years old, <i>very</i> rusty, and the most useful thing you have to hand right now is a flashlight. (Your not-actually-all-that-trusty hunk of lead is somewhere at the bottom of the room right now, and bouyancy is currently your top priority, so you're not diving for it.)</p>
+  <p>But it seems fortune smiles upon you, in a sarcastic sort of way, because after a few solid thwacks, a brittle corner gives way, and suddenly the whole grate comes swinging down, showering you in bits of rust, grime, and probably the remains of an ancient broken lock.</p>
+  <p>It's a struggle to ascend, but you brace yourself against the walls, pull with all your failing arm-strength, and heave yourself into the deluge.</p>
+  <p>The current takes you in an instant.</p>
+  <div class=stick-to-bottom><p>You can only <a href="#investigate-grate-2">keep swimming</a>.</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-swim-3>
+  <div class=page-number><a href=#investigate-swim-3></a>35</div>
+  <div class=page-content>
+  <p><i>This is a terrible choice</i>, you think to yourself, almost before you make it.</p>
+  <p>You dive under the surface, squinting into the murk and shadows. The water has doused any remaining light, and you can't see for beans. You follow along the walls by touch, but all your find is torch alcoves and the dead-end seams of what must be the door.</p>
+  <p>You try to swim back to the central shaft, but you're swimming blindly, and at some point you lose the walls and there is nothing but water, endless water in every direction.</p>
+  <p>The last thing you find before losing consciousness is the altar. The force of the water shoves you down, down, down, into the darkness...</p>
+  <div class=stick-to-bottom><center><h3>YOU HAVE DIED.</h3></center>
+  <p>(Would you like to <a href="#example-start">try again</a>?)</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=investigate-grate-2>
+  <div class=page-number><a href=#investigate-grate-2></a>36</div>
+  <div class=page-content>
+  <p>At first you can't even tell which way is up. Most people mean this metaphorically; you mean it quite literally. Water is everywhere. It is up and down and north and south and east and west, and you tumble and turn in the current, struggling to hold your breath until a sudden, solid rock bashes all the air out of you like a balloon run over by a truck.</p>
+  <p>You scrabble for purchase, and heave yourself onto solid, slippery stone with a drowning, hypothermic gasp.</p>
+  <p>Would you look at that! You're alive! And, as you frantically pat yourself down, you find the statue is, by some miracle of fluid dynamics, still in your pockets, unharmed.</p>
+  <p>Not too far away, barely half a mile by your reckoning, the smoke of the archeologist's campsite you've been calling home base all week rises in the sky -- to the north, you realize, because this must be a tributary of the river just south of where you've been.</p>
+  <div class=stick-to-bottom><p>With unsteady legs, you hop from the rock to the riverbank, and <a href="#end-2">begin the trek back to camp</a>.</p></div>
+  </div>
+  </div>
+  
+  
+   <div class="page ancient" id=end-1>
+  <div class=page-number><a href=#end-1></a>37</div>
+  <div class=page-content><h3>SUCCESS</h3>
+  <p>You have escaped the antechamber alive with the statue in hand, which will be sold over to the local GYTHRFTHSTZ museum for a handsome sum.</p>
+  <p>(And you didn't even almost drown!)</p>
+  <div class=stick-to-bottom><center><h3>Give yourself a pat on the back!</h3></center>
+  <p>Now, it's time to <a href="#fin">let this story come to an end</a>.</p>
+  <p>(Or would you like to <a href="#example-start">play again</a>?)</p></div>
+  </div>
+  </div>
+  
+  <div class="page ancient" id=end-2>
+  <div class=page-number><a href=#end-2></a>38</div>
+  <div class=page-content><h3>SUCCESS</h3>
+  <p>You have escaped the antechamber alive with the statue in hand, which will be sold over to the local GYTHRFTHSTZ museum for a handsome sum.</p>
+  <p>(You do come back to camp half-drowned and with the start of hypothermia, though, and worry your employer and all your colleagues sick. But hey, all's well that ends well, right?)</p>
+  <div class=stick-to-bottom><center><h3>Give yourself a pat on the back!</h3></center>
+  <p>Now, it's time to <a href="#fin">let this story come to an end</a>.</p>
+  <p>(Or would you like to <a href="#example-start">play again</a>?)</p></div>
+  </div>
+  </div>
+  
+   <div class="page" id=fin>
+  <div class=page-number><a href=#fin></a>39</div>
+  <div class=page-content><h3>That's All, Folks</h3>
+  <p>Have fun making your own CYOA games!</p>
+  <h4>Credits Note</h4>
+  <p>The general code concept of this system/stylesheet was inspired by the clever workarounds of <span title="It was a Hiveswap Friendsim fic featuring their MSPAReader and their OC, at least 5k, written as Interactive Fiction, I think for a fic exchange event? Bookmark is for https://archiveofourown.org/works/21868444 (deleted at some point between June 2021 and March 2022 :( )"><a href="https://archiveofourown.org/works/21868444">an AO3 user whose work I can no longer find</a></span>. I would thank them for it if I knew how.</p>
+  </div>
+  </div>
+  
+  
+  </div>
+  
+  <div class=footer id=footer>
+    <div class=left><a href="#start">Restart Game</a></div>
+    <div class=right><a href="/testdirectory.html">Back To Test Directory</a></div>
+  </div>
+  
+  
+  </div>
+  
+  </body>
+</html>
+
