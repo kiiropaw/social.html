@@ -10,17 +10,14 @@
     
 <style> 
 
-
   body {
   background: url("https://i.pinimg.com/736x/07/a8/56/07a85620fca3325d8393aac598503ab2.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 
-  
 .box {
   color: white;
   margin: auto;
@@ -34,6 +31,31 @@
   background-size: 330px 335px;
   background-position-x: center;
 }
+
+  <script>
+        window.onload = function () {
+            var draggableDiv = document.getElementById("box");
+            var posX = 0,
+                posY = 0;
+            var draggable = false;
+
+            draggableDiv.addEventListener("mousedown", function (event) {
+                draggable = true;
+                posX = event.clientX - draggableDiv.offsetLeft;
+                posY = event.clientY - draggableDiv.offsetTop;
+            });
+
+            window.addEventListener("mousemove", function (event) {
+                if (draggable) {
+                    draggableDiv.style.left = event.clientX - posX + "px";
+                    draggableDiv.style.top = event.clientY - posY + "px";
+                }
+            });
+
+            window.addEventListener("mouseup", function () {
+                draggable = false;
+            });
+        };
   
 </style> 
 </head>
@@ -50,7 +72,6 @@
        <p><a href="https://www.youtube.com/@Groundsky">YouTube</a></p>
   <p><a href="https://sheezy.art/groundsky">SheezyArt</a></p>
   <p><a href="https://backloggd.com/u/Groundsky/">Backlogged</a></p>
-  
   
 </div>
 </center>
