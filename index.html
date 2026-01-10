@@ -32,31 +32,6 @@
   background-position-x: center;
 }
 
-  <script>
-        window.onload = function () {
-            var draggableDiv = document.getElementById("box");
-            var posX = 0,
-                posY = 0;
-            var draggable = false;
-
-            draggableDiv.addEventListener("mousedown", function (event) {
-                draggable = true;
-                posX = event.clientX - draggableDiv.offsetLeft;
-                posY = event.clientY - draggableDiv.offsetTop;
-            });
-
-            window.addEventListener("mousemove", function (event) {
-                if (draggable) {
-                    draggableDiv.style.left = event.clientX - posX + "px";
-                    draggableDiv.style.top = event.clientY - posY + "px";
-                }
-            });
-
-            window.addEventListener("mouseup", function () {
-                draggable = false;
-            });
-        };
-  
 </style> 
 </head>
 <body>
